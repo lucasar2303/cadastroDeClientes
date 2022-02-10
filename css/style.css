@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "Comfortaa";
+    src: url("./Comfortaa.ttf")
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1280px;
+}
+.header{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+.title{
+    display: inline-block;
+    margin-right: 20px;
+    font-family: "Comfortaa";
+    font-size: 36px;
+    font-weight: 300;
+    color: #333;
+}
+
+#button-add{
+    border: none;
+    height: 40px;
+    background: rgb(255,215,89);
+    background: linear-gradient(34deg, rgba(255,215,89,1) 0%, rgba(237,149,37,1) 100%);  
+    color: #fff;
+    font-weight: 500;
+    cursor:pointer;
+    font-family: 'Comfortaa';
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 0px 20px;
+    margin-right: 20px;    
+}
+
+
+#line{
+    width: 100%;
+    height: 3px;
+    background: rgb(255,215,89);
+    background: linear-gradient(234deg, rgba(255,215,89,1) 0%, rgba(237,149,37,1) 100%);
+    border-radius: 10px;
+}
+
+/* TABLE */
+
+table{
+    width: 100%;
+    background-color: #333;
+    border-collapse: collapse;
+}
+
+.row-table{
+    border-bottom: 2px solid #eee;
+}
+
+#first-row-table th{
+    background-color: #333;
+    padding: 12px 0px 12px 10px;
+    color: #FF9b30;
+}
+
+.row-table th,td{
+    font-family: "Comfortaa";
+    font-weight: 300;
+    font-size: 12px;
+    text-align: left;
+    padding: 20px 0px 20px 10px;
+    border: none;
+    background-color: #eee;
+    margin: 0;
+    background-color: #fff;
+}
+
+.button-edit{
+    background-color: transparent;
+    background-image: url(../img/edit.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20px;
+    width: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.button-delete{
+    background-color: transparent;
+    background-image: url(../img/trash.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20px;
+    width: 20px;
+    border: none;
+    cursor: pointer;
+}
