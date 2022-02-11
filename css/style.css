@@ -63,6 +63,11 @@ table{
 
 .row-table{
     border-bottom: 2px solid #eee;
+    background-color: #fff;
+}
+
+.row-table:hover{
+    background-color: rgb(250, 250, 250);
 }
 
 #first-row-table th{
@@ -78,9 +83,9 @@ table{
     text-align: left;
     padding: 20px 0px 20px 10px;
     border: none;
-    background-color: #eee;
+
     margin: 0;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .button-edit{

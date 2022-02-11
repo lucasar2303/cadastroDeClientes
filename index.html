@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
 </head>
 <body>
     <div class="content">
         <div class="header">
             <h1 class="title">Clientes</h1>
-            <button id="button-add">Adicionar</button>
+            <button id="button-add" onclick="modalOpen()">Adicionar</button>
             <span id="line"> </span>
         </div>
         <table>
@@ -74,6 +75,35 @@
              </tbody>
         </table>
     </div>
+    <div class="modal">
+        <div class="modalClose"></div>
+        <form class="form-add" method="get" action=".">
+
+
+            <h2>Novo Cliente</h2>
+
+            <input name="nome" type="text" required placeholder="Nome*" id="nome" size="60" />
+
+            <input name="celular" type="text" required placeholder="Celular*" id="celular" size="60" />
+
+            <input name="email" type="text" required placeholder="Email*" id="email" size="60" />
+
+            <input name="cep" type="text" placeholder="CEP" id="cep" value="" size="10" maxlength="9"
+                    />
+
+            <input name="rua" type="text" required placeholder="Rua*" id="rua" size="60" />
+
+            <input name="bairro" type="text" required placeholder="Bairro*" id="bairro" size="40" />
+
+            <input name="cidade" type="text" required placeholder="Cidade*" id="cidade" size="40" />
+
+            <input name="uf" type="text" id="uf" required placeholder="Estado*" size="2" maxlength="2" />
+
+            <input type="button" class="button-add-form" value="Confirmar">
+          </form>
+    </div>
     
+    <script src="./js/script.js"></script>
+
 </body>
 </html>
