@@ -88,8 +88,8 @@
 
             <input name="email" type="text" required placeholder="Email*" id="email" size="60" />
 
-            <input name="cep" type="text" placeholder="CEP" id="cep" value="" size="10" maxlength="9"
-                    />
+            <input name="cep" type="text" id="cep" placeholder="CEP*" value="" size="10" maxlength="9"
+               onblur="pesquisacep(this.value);" />
 
             <input name="rua" type="text" required placeholder="Rua*" id="rua" size="60" />
 
@@ -104,6 +104,7 @@
     </div>
     
     <script src="./js/script.js"></script>
+    <script src="./js/cep.js"></script>
 
 </body>
 </html>

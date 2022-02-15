@@ -29,6 +29,7 @@
 .form-add{
     background-color: #eee;
     width: 80%;
+
     max-width: 500px;
     display: flex;
     justify-content: center;
