@@ -15,7 +15,7 @@
             <button id="button-add" onclick="modalOpen()">Adicionar</button>
             <span id="line"> </span>
         </div>
-        <table>
+        <table id="tableClients">
             <thead>
                 <tr class="row-table" id="first-row-table">
                     <th>#</th>
@@ -30,6 +30,7 @@
                 </tr>
              </thead>
              <tbody>
+            <!--
                 <tr class="row-table">
                     <td>#</td>
                     <td>Lucas Anastácio Ribeiro</td>
@@ -71,33 +72,33 @@
                     <td><button class="button-edit"></button></td>
                     <td><button class="button-delete"></button></td>
                 </tr>
-
+            -->
              </tbody>
         </table>
     </div>
     <div class="modal">
         <div class="modalClose"></div>
-        <form class="form-add" method="get" action=".">
+        <form class="form-add" id="formAdd" method="get" action=".">
 
 
             <h2>Novo Cliente</h2>
 
-            <input name="nome" type="text" required placeholder="Nome*" id="nome" size="60" />
+            <input name="nome" type="text" required placeholder="Nome*" id="nome" class="modal-input" size="60" />
 
-            <input name="celular" type="text" required placeholder="Celular*" id="celular" size="60" />
+            <input name="celular" type="text" required placeholder="Celular*" class="modal-input" id="celular" size="60" />
 
-            <input name="email" type="text" required placeholder="Email*" id="email" size="60" />
+            <input name="email" type="text" required placeholder="Email*" class="modal-input" id="email" size="60" />
 
-            <input name="cep" type="text" id="cep" placeholder="CEP*" value="" size="10" maxlength="9"
+            <input name="cep" type="text" class="modal-input" id="cep" placeholder="CEP*" value="" size="10" maxlength="9"
                onblur="pesquisacep(this.value);" />
 
-            <input name="rua" type="text" required placeholder="Rua*" id="rua" size="60" />
+            <input name="rua" type="text" required placeholder="Rua*" class="modal-input" id="rua" size="60" />
 
-            <input name="bairro" type="text" required placeholder="Bairro*" id="bairro" size="40" />
+            <input name="bairro" type="text" required placeholder="Bairro*" class="modal-input" id="bairro" size="40" />
 
-            <input name="cidade" type="text" required placeholder="Cidade*" id="cidade" size="40" />
+            <input name="cidade" type="text" required placeholder="Cidade*" class="modal-input" id="cidade" size="40" />
 
-            <input name="uf" type="text" id="uf" required placeholder="Estado*" size="2" maxlength="2" />
+            <input name="uf" type="text" class="modal-input" id="uf" required placeholder="Estado*" size="2" maxlength="2" />
 
             <input type="button" class="button-add-form" value="Confirmar">
           </form>
