@@ -10,6 +10,7 @@ function modalOpen(){
 function modalClose(){
     modal.classList.remove('modal-active');
     clearFields();
+    document.querySelector('#nome').dataset.index = 'new'
 }
 
 modalCloseElement.addEventListener("click" , modalClose, false);
@@ -65,6 +66,8 @@ const deleteClient = (index) => {
     const dbClient = readClient()
     dbClient.splice(index,1)
     setLocalStorage(dbClient)
+
+    updateTable();
 }
 
 
@@ -90,23 +93,30 @@ function saveClient(){
             cidade : document.querySelector('#cidade').value,
             estado : document.querySelector('#uf').value
         }
-        createClient(client);
-        updateTable();
-        modalClose();
+        const index = document.getElementById('nome').dataset.index
+        if(index == 'new'){
+            createClient(client);
+            updateTable();
+            modalClose();
+        } else{
+            updateClient(index, client);
+            updateTable();
+            modalClose();
+        }
+
     }
 }
 
 document.querySelector('.button-add-form').addEventListener('click', saveClient);
 
-// ========== UPDATE
+// ========== READ
 
-var numRow = 1
 
-function createRow(client){
+function createRow(client, index){
     const newRow = document.createElement('tr')
     newRow.classList.add('row-table')
     newRow.innerHTML = `
-        <td>${numRow++}</td>
+        <td>${index}</td>
         <td>${client.nome}</td>
         <td>${client.celular}</td>
         <td>${client.email}</td>
@@ -115,8 +125,8 @@ function createRow(client){
         <td>${client.bairro}</td>
         <td>${client.cidade}</td>
         <td>${client.estado}</td>
-        <td><button class="button-edit"></button></td>
-        <td><button class="button-delete"></button></td>
+        <td><button class="button-edit" type='button' id="edit-${index}"></button></td>
+        <td><button class="button-delete" type='button'  id="delete-${index}"></button></td>
     `
     document.querySelector("#tableClients>tbody").appendChild(newRow)
 
@@ -134,6 +144,50 @@ function updateTable(){
     dbClient.forEach(createRow);
 
 }
+
+// ========== UPDATE and DELETE
+
+function fillFields(client){
+    document.querySelector('#nome').value = client.nome
+    document.querySelector('#celular').value = client.celular
+    document.querySelector('#email').value = client.email
+    document.querySelector('#cep').value = client.cep
+    document.querySelector('#rua').value = client.rua
+    document.querySelector('#bairro').value = client.bairro
+    document.querySelector('#cidade').value = client.cidade
+    document.querySelector('#uf').value = client.estado
+    document.querySelector('#nome').dataset.index = client.index
+}
+
+function editClient(index){
+    const client = readClient()[index]
+    client.index = index
+    fillFields(client);
+    modalOpen();
+}
+
+function editDelete (event){
+    if(event.target.type == 'button'){
+        
+       const [action, index] = event.target.id.split('-')
+
+       if(action == 'edit'){
+        editClient(index)
+
+       } else{
+            let answerConfirm = confirm(`Deseja deletar o cliente ${index} ?`);
+            if(answerConfirm){deleteClient()}
+           
+       }
+    }
+} 
+
+document.querySelector('#tableClients>tbody')
+    .addEventListener('click', editDelete)
+
+
+// ========= SEARCH
+
 
 
 
