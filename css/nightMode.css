@@ -1,0 +1,53 @@
+body{
+    background-color: #222;
+    
+}
+
+.title{
+    color: #ddd;
+    
+}
+
+.row-table{
+    border-bottom: 2px solid #333;
+    background-color: #222;
+    color: #ddd;
+    
+}
+
+.row-table:hover{
+    background-color: #111;
+    
+}
+
+table{
+    background-color: #111;
+
+}
+
+#first-row-table th{
+    background-color: #111;
+
+}
+
+#button-nightMode{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 60px;
+    height: 30px;
+    border: none;
+    background-color: #111;
+    border-radius: 30px;
+    margin-left: 10px;
+
+}
+
+#indicator{
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 50%;
+    transform: scale(0.8);
+
+}

@@ -186,8 +186,27 @@ document.querySelector('#tableClients>tbody')
     .addEventListener('click', editDelete)
 
 
-// ========= SEARCH
 
 
 
+// =========== NIGHT MODE
+let mode = false
 
+function nightMode(){
+    const link = document.querySelector("#linkStyle");
+
+    if ( mode == false ) {
+        link.href = "./css/nightMode.css";
+        console.log('IF')
+        mode = true;
+    }else{
+        link.href = " ";
+        console.log('eLSE')
+        mode = false;
+    }
+    
+}
+
+
+document.querySelector('#button-nightMode')
+    .addEventListener('click', nightMode)

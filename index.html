@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" id="linkStyle" href="">
     <link rel="stylesheet" href="./css/modal.css">
 </head>
 <body>
@@ -14,7 +15,11 @@
             <h1 class="title">Clientes</h1>
             <button id="button-add" onclick="modalOpen()">Adicionar</button>
             <span id="line"> </span>
+            <button id="button-nightMode">
+                <i id="indicator"></i>
+            </button>
         </div>
+        <div class="content-table">
         <table id="tableClients">
             <thead>
                 <tr class="row-table" id="first-row-table">
@@ -30,51 +35,10 @@
                 </tr>
              </thead>
              <tbody>
-            <!--
-                <tr class="row-table">
-                    <td>#</td>
-                    <td>Lucas Anastácio Ribeiro</td>
-                    <td>12 992029139</td>
-                    <td>lucas-ar13@hotmail.com</td>
-                    <td>12120-206</td>
-                    <td>Av. Tremembé</td>
-                    <td>Jd. Nossa Senhora da Glória</td>
-                    <td>Tremembé</td>
-                    <td>SP</td>
-                    <td><button class="button-edit"></button></td>
-                    <td><button class="button-delete"></button></td>
-                </tr>
 
-                <tr class="row-table">
-                    <td>#</td>
-                    <td>Lucas Anastácio Ribeiro</td>
-                    <td>12 992029139</td>
-                    <td>lucas-ar13@hotmail.com</td>
-                    <td>12120-206</td>
-                    <td>Av. Tremembé</td>
-                    <td>Jd. Nossa Senhora da Glória</td>
-                    <td>Tremembé</td>
-                    <td>SP</td>
-                    <td><button class="button-edit"></button></td>
-                    <td><button class="button-delete"></button></td>
-                </tr>
-
-                <tr class="row-table">
-                    <td>#</td>
-                    <td>Lucas Anastácio Ribeiro</td>
-                    <td>12 992029139</td>
-                    <td>lucas-ar13@hotmail.com</td>
-                    <td>12120-206</td>
-                    <td>Av. Tremembé</td>
-                    <td>Jd. Nossa Senhora da Glória</td>
-                    <td>Tremembé</td>
-                    <td>SP</td>
-                    <td><button class="button-edit"></button></td>
-                    <td><button class="button-delete"></button></td>
-                </tr>
-            -->
              </tbody>
         </table>
+        </div>
     </div>
     <div class="modal">
         <div class="modalClose"></div>
