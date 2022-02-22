@@ -59,6 +59,8 @@ function updateClient (index, client){
     const dbClient = readClient();
     dbClient[index] = client
     setLocalStorage(dbClient)
+    closeLastSearch();
+    closeSearch();
 }
 
 // DELETE
@@ -158,6 +160,7 @@ function fillFields(client){
     document.querySelector('#cidade').value = client.cidade
     document.querySelector('#uf').value = client.estado
     document.querySelector('#nome').dataset.index = client.index
+
 }
 
 function editClient(index){
@@ -165,6 +168,7 @@ function editClient(index){
     client.index = index
     fillFields(client);
     modalOpen();
+
 }
 
 function editDelete (event){
@@ -175,6 +179,7 @@ function editDelete (event){
        if(action == 'edit'){
         document.querySelector('#modalTitle').innerHTML = "Atualizar Dados";
         editClient(index)
+     
 
 
        } else{
