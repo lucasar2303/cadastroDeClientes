@@ -8,16 +8,33 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" id="linkStyle" href="">
     <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="content">
         <div class="header">
-            <h1 class="title">Clientes</h1>
-            <button id="button-add" onclick="modalOpen()">Adicionar</button>
-            <span id="line"> </span>
-            <button id="button-nightMode">
-                <i id="indicator"></i>
-            </button>
+            <div class="header1">
+                <h1 class="title">Clientes</h1>
+                <div class="buttonsHeader">
+                    <button id="button-add" onclick="modalOpen()">Adicionar</button>
+                    <button id="button-nightMode">
+                        <i id="indicator"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="div-search">
+                <i class="closeSearch"></i>
+                <input type="text" class="input-search" name="" placeholder="Pesquise por nome">
+                <a href="#" class="btn-search">
+                    <i class="icon-search"></i>
+                </a>
+            </div>
+            <div class="lastSearch">
+                <p id="lastName"></p>
+                <i class="closeSearch" id="closeLastSearch"></i>
+            </div>
+            
+
         </div>
         <div class="content-table">
         <table id="tableClients">
@@ -45,7 +62,7 @@
         <form class="form-add" id="formAdd" method="get" action=".">
 
 
-            <h2>Novo Cliente</h2>
+            <h2 id="modalTitle">Novo Cliente</h2>
 
             <input name="nome" data-index="new" type="text" required placeholder="Nome*" id="nome" class="modal-input" size="60" />
 

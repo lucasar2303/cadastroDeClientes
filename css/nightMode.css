@@ -8,6 +8,18 @@ body{
     
 }
 
+.div-search{
+    background-color: #111;
+}
+
+.input-search{
+    color: #fff;
+}
+
+.lastSearch{
+    background-color: #111;
+}
+
 .row-table{
     border-bottom: 2px solid #333;
     background-color: #222;
@@ -34,8 +46,8 @@ table{
     position: relative;
     display: flex;
     justify-content: flex-end;
-    width: 60px;
-    height: 30px;
+    width: 80px;
+    height: 40px;
     border: none;
     background-color: #111;
     border-radius: 30px;
@@ -44,8 +56,8 @@ table{
 }
 
 #indicator{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background: linear-gradient(to bottom, #444, #222);
     border-radius: 50%;
     transform: scale(0.8);

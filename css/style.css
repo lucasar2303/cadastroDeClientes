@@ -6,6 +6,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Comfortaa";
 }
 
 body{
@@ -25,6 +26,8 @@ body{
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: flex-start;
+    align-items: center;
     margin-top: 50px;
     margin-bottom: 15px;
 }
@@ -38,6 +41,14 @@ body{
     transition: 0.2s;
 }
 
+.header1{
+    display: flex;
+}
+
+.buttonsHeader{
+    display: flex;
+    margin-right: 10px;
+}
 
 
 #button-add{
@@ -52,58 +63,144 @@ body{
     font-size: 17px;
     border-radius: 5px;
     padding: 0px 20px;
-    margin-right: 20px;    
+   
 }
 
-
-#line{
-    width: 70%;
-    height: 3px;
-    background: rgb(255,215,89);
-    background: linear-gradient(234deg, rgba(255,215,89,1) 0%, rgba(237,149,37,1) 100%);
-    border-radius: 10px;
-}
-
-/*
-#button-nightMode{
-    position: relative;
+.div-search{
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    background-color: #fff;
     display: flex;
-    justify-content: flex-end;
-    width: 90px;
-    height: 30px;
-    border: none;
-    background-color: #111;
-    border-radius: 30px;
-    margin-left: 10px;
-    ransition: 0.5s;
+    justify-content: center;
+    align-items: center;
+    box-shadow:     inset 0 3px 5px rgba(0,0,0,0.1),
+                    inset 0 -2px 4px rgba(0,0,0,0.1);
+    padding: 0px;
 }
 
-#indicator{
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(to bottom, #444, #222);
+.input-search{
+    width: 0px;
+    margin-left: 0px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    color: #333;
+    font-size: 14px;
+    transition: 0.6s;
+}
+
+.closeSearch{
+    width: 0px;
+    height: 40px;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+  
+}
+
+.closeSearch::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background-color: #FF9b30;
+    transform: rotate(45deg);
+}
+
+.closeSearch::after{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background-color: #FF9b30;
+    transform: rotate(-45deg);
+}
+
+.input-search::placeholder{
+    color: #888;
+    transition: 0.6s;
+}
+
+.btn-search{
+    color: #FF9b30;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border: none;
     border-radius: 50%;
-    transform: scale(0.8);
-} */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-search::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #FF9b30;
+    border-radius: 50%;
+    transform: translate(-2px,-2px);
+}
+
+.btn-search::after{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 8px;
+    background: #FF9b30;
+    border-radius: 50%;
+    transform: translate(5px,5px) rotate(315deg);
+}
+
+.lastSearch{
+
+    height: 40px;
+    border-radius: 40px;
+    background-color: #fff;
+    padding: 0 5px 0 20px;
+    margin-left: 10px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:     inset 0 3px 5px rgba(0,0,0,0.1),
+                    inset 0 -2px 4px rgba(0,0,0,0.1);
+    color: #999;
+}
+
+.lastSearch .closeSearch{
+    width: 40px;
+    visibility: visible;
+}
+
+
+
+
 
 #button-nightMode{
 
     display: flex;
     justify-content: flex-start;
-    width: 60px;
-    height: 30px;
+    width: 80px;
+    height: 40px;
     border: none;
     background-color: #fff;
     border-radius: 30px;
     margin-left: 10px;
-    box-shadow: inset 0 3px 5px rgba(0,0,0,0.1),
-    inset 0 -2px 4px rgba(0,0,0,0.1);
+    box-shadow:   inset 0 3px 5px rgba(0,0,0,0.1),
+                  inset 0 -2px 4px rgba(0,0,0,0.1);
     transition: 0.2s;
 }
 
 #indicator{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background: linear-gradient(to bottom, #fff, #bbb);
     border-radius: 50%;
     transform: scale(0.8);
@@ -125,6 +222,10 @@ table{
     border-bottom: 2px solid #eee;
     background-color: #fff;
     transition: 0.2s;
+}
+
+.row-table td{
+    min-width: 50px;
 }
 
 .row-table:hover{
@@ -176,8 +277,35 @@ table{
     cursor: pointer;
 }
 
-@media (max-width: 600px)
+@media (max-width: 850px)
 {
+
+    .header{
+        flex-wrap: wrap;
+    }
+
+    .header1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .buttonsHeader{
+        display: flex;
+    }
+
+    .div-search{
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .lastSearch{
+        margin: 0px;
+    }
+
+
     #button-add{
         font-size: 14px;
         padding: 0px 10px;

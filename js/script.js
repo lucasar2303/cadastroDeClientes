@@ -10,7 +10,8 @@ function modalOpen(){
 function modalClose(){
     modal.classList.remove('modal-active');
     clearFields();
-    document.querySelector('#nome').dataset.index = 'new'
+    document.querySelector('#nome').dataset.index = 'new';
+    document.querySelector('#modalTitle').innerHTML = "Novo Cliente";
 }
 
 modalCloseElement.addEventListener("click" , modalClose, false);
@@ -172,11 +173,15 @@ function editDelete (event){
        const [action, index] = event.target.id.split('-')
 
        if(action == 'edit'){
+        document.querySelector('#modalTitle').innerHTML = "Atualizar Dados";
         editClient(index)
+
 
        } else{
             let answerConfirm = confirm(`Deseja deletar o cliente ${index} ?`);
-            if(answerConfirm){deleteClient()}
+            if(answerConfirm){deleteClient(index)}
+            closeLastSearch();
+            closeSearch();
            
        }
     }
@@ -186,6 +191,74 @@ document.querySelector('#tableClients>tbody')
     .addEventListener('click', editDelete)
 
 
+// ========= SEARCH
+
+let indexSearch = 0;
+
+function search(array, searchName, index){
+
+    if(array.nome.match(searchName)){
+        createRow(array, index)
+    }
+    indexSearch++
+}
+
+function searchClients(searchName){
+    indexSearch = 0;
+    const clients = readClient();
+    clearTable();
+    clients.forEach(client => search(client, searchName, indexSearch))
+}
+
+let divSearch = false;
+const divSearchCss = document.querySelector('.input-search');
+const closeSearchCss = document.querySelector('.closeSearch');
+
+function openSearch(){
+    divSearchCss.style.width = '140px';
+    divSearchCss.placeholder = 'Pesquise por nome';
+    closeSearchCss.style.width = '40px';
+    closeSearchCss.style.visibility = 'visible';
+    divSearch = true;
+}
+
+function closeSearch(){
+    divSearchCss.style.width = '0px';
+    divSearchCss.placeholder = '';
+    divSearchCss.value = '';
+    closeSearchCss.style.width = '0px';
+    closeSearchCss.style.visibility = 'hidden';
+    divSearch = false;
+}
+
+function lastSearch(lastName){
+    document.querySelector("#lastName").innerHTML = lastName;
+    document.querySelector('.lastSearch').style.display = "flex";
+}
+
+function closeLastSearch(){
+    document.querySelector('.lastSearch').style.display = "none";
+    updateTable();
+}
+
+function sendSearch(){
+   if(divSearch == false){
+    openSearch();
+   }else{
+    const txtSearch = document.querySelector('.input-search').value;
+    searchClients(txtSearch);
+    lastSearch(txtSearch);
+   }
+}
+
+document.querySelector('.btn-search')
+    .addEventListener('click', sendSearch)
+
+document.querySelector('#closeLastSearch')
+    .addEventListener('click', closeLastSearch)
+
+closeSearchCss.addEventListener('click', closeSearch)
+    
 
 
 
