@@ -3,7 +3,7 @@ Cadastro de Clientes
 </h1>
 
 <h1>
-	<img src="crud.png">
+	<img src="crud.PNG">
 </h1>
 
 <h2 align="center">
